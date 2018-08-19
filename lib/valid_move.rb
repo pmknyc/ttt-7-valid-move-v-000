@@ -10,16 +10,16 @@ def position_taken? (board, index)
   board[index] != " " && board[index] != "" && board[index] != nil
 end
 
-# if player move WITHIN RANGE of 9 baard cells AND position_taken(false) is AVAILABLE 
-#  then move IS VALID
-# if player move OUT OF RANGE of 9 baard cells OR position_taken(true) is TAKEN 
-#  then move NOT VALID
+# if player move WITHIN RANGE of 9 board cells AND
+#  position_taken(false) is AVAILABLE then move IS VALID
+# if player move OUT OF RANGE of 9 board cells OR
+#  position_taken(true) is TAKEN then move NOT VALID
 
 def valid_move?(board, index)
-  
+
    if index.between?(0,8) == true && position_taken?(board,index) == false
      valid = true
-     
+
    elsif index.between?(0,8) == false || position_taken?(board,index) == true
      valid = false
    end
